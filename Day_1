@@ -1,0 +1,154 @@
+Bash is a Unix shell used to interact with the OS
+BASH is widely used on Unix-like OS
+
+
+!n = use the command in history. n is number assoc
+
+Ctrl + A = Go to ther start of the line
+Ctrl + E = End of line.
+
+Maneuvering in manual
+
+    man bash - Opens the extensive BASH man page
+    man find - OPens man page with find command
+    ---------------------------------------------
+    G - move to end of man page
+    g - move to start of man page
+    ---------------------------------------------
+    /pattern = search foward in man
+    ?pattern = seach backward in man
+    ---------------------------------------------
+    n - (next) finds next result of search
+    b - (back) finds previous result
+    ---------------------------------------------
+
+ORDER OF EVALUATION
+    1.Redirection ( Gator Boys)
+    2.Alias
+    3.Parameter expansion, command substitution, arithmetic expansion, and quote removal
+    4.Shell Function
+    5.Built-In commands
+    6.Hash tables
+    7.Path variable
+    8.Error
+
+
+
+which - finds the full path of whatever follows
+
+        STDIN- standard in
+        STDOUT- Output
+        STDERR- Error
+        
+Brace Expansion
+    touch file{1..100}   -   Creates 100 files named file1,2,3
+
+
+
+Command Chaining Operators
+    "&" - Backgrounds the process
+    ";" - Runs multiple commands in one line
+    "&&" - Boolean Logic 'AND' operator. Only runs next command if previous command succeeds.
+    "||" - Boolean Logci 'OR' operator. Only runs next command if previous command fails. i.e. cmd1||cmd2||cmd3
+    ""
+
+
+File System Manipulation
+    --Absolute, Home, and Relative file
+        -Home directory= ~/ or $HOME
+        -Absolute Path = /etc/passwd
+        -Relative Path = ./ or ..
+    
+    --File System Commands
+        touch     touch -t [[CC]YY]MMDDhhmm[.ss]
+        mkdir     mkdir -p
+        rm        rm -rf
+        rmdir     rmdir -p
+        ls        ls -lisa
+        cd        cd -
+
+Finding Files and Dirs
+    -locate
+    -whereis
+    -which
+    -find
+        =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        REFERENCE THE STUDENT HANDBOOK FOR OPTIONS AND USGAE
+        =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+         find -name		denotes case-sensitive file
+         find -iname 		denotes case-insensitive file
+         find -ilname 		" and symbolic linked files
+         find -inum ##### 	searches for file w/ inode "#####"
+         find -size 		denotes file of "x" size
+         find -size 10c 	finds file of size exactly 10 bytes
+         find -size +10M -20M 	finds file of size greater than 10MB and less than 20MB
+         find -size -1G 	finds file of size less than 1GB
+         find -group 		denotes belonging to group "name"
+         find -gid 		denotes files belonging to group ID "###"
+         find -user		denotes files belonging to user: "name"
+         find -uid 		denotes files belonging to user ID: "###"
+         find -maxdepth 	searches to designated depth only for designated files
+         find /* 		starts recursive search at "/"
+         find /* -type d	" for directories ONLY
+         find /* -type f	" for files ONLY
+         find /* -type p 	" for named-pipes ONLY
+         find /* -type l	" for symbolic links ONLY
+         find /* -type s	" for sockets ONLY
+         find / -type s -exec echo {} 2>/dev/null ; | grep domain* finds socket files
+         find -name \*.txt 	searches from pwd recursively for files ending in ".txt"
+         find -atime 3 		accessed in last 3 days
+         find -ctime 2		changed 2 days ago
+         find -mtime 2		modified 2 days ago
+         find $HOME -mtime 0 	searches for files modified in last 24hrs in current-user home-dir
+         find -cmin -30		changed last 30 minutes
+         find -amin -60		accessed last hour
+         find -mmin -60		modified in last hour
+         find -empty		searches for empty files ONLY
+         find -executable	Matches files which are executable and directories which are searchable
+         find -exec		execute CMD;true is "0" status returned
+
+         find /var/log/ -iname *.log -exec ls -al {} 2>/dev/null \;
+
+                            finds all .log files in directory: /var/log/ and lists them all
+
+         find -path		searches in designated path
+         find -ls		lists files that are found
+         find -print		print output and automatically adds new-line
+         find -printf \n	prints output followed by new-line
+         find -prune		searches for files recursively but avoids descending into dirs
+         find -perm		denotes files with designated permissions level
+
+         find / -perm /4000 -uid 0 -ls 2>/dev/null
+
+                            finds all SUID files owned by "root" and displays them
+
+         find / -perm -2 -type f 2>/dev/null
+
+                            finds all GUID world files
+
+         find / -perm -2 ! -type -l -ls 2>/dev/null
+
+                            finds all GUID world files that are not links
+
+         find / ! -path "/proc/*" ! -path "/root/*" -perm -2 -type -f -ls 2>/dev/null
+
+                            finds all world files not in directories: /proc OR /root
+
+         find / -perm /2 -ls 2>/dev/null
+
+                            finds files writable by anyone
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+*************************************************************************
+=========================================================================
+curl cht.sh/(command)     ------- FIND EXAMPLES FOR THE COMMAND
+=========================================================================
+*************************************************************************
+
+========================================================================
+explainshell.com
+========================================================================
+
+
+
