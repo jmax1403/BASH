@@ -1,0 +1,88 @@
+Overview
+    Conditionals
+        -e = exist?
+        -f exist and file?
+        -d
+        == for letters
+        -eq for numbers
+        != not equal for letters
+        -ne for numbers
+        IF
+            if [[condition]]; then
+                cmds
+            elif [[cond]]; then
+            else
+                cmds
+            fi
+    Command Substitution
+    Commands
+        alias
+            Alias
+                view all aliases
+            alias (name)='(command)'
+                syntax for setting an alias
+            unalias (name)
+                removes alias from that name
+            alias egrep='egrep --color=auto'
+                best use of aliases to include common options of cmds
+        sort
+            sort
+                sort content based on the position on the ASCII table
+            sort -n 
+                sorts content numerically
+            sort -u
+                sort uniquely
+            sort -nr
+                sort numerically reversed
+            sort -t'+'
+                specify field seperator '+'
+        uniq
+            uniq
+                select content uniquely, MUST ALREADY BE SORTED
+            uniq -c
+                select content uniquely with a count reading
+            uniq -u
+                Display only the unique lines ( lines without duplicates )
+            uniq -d
+                display only the duplicate lines ( opposite of -u )
+        awk "awk(1) - pattern scanning and process language"
+            
+            syntax:awk [options] 'selection _criteria [action]' inout_file > output_file
+            
+            awk -F: '{print $1}'
+                displays 1st field delimited by a ":"
+            awk '{print $2}'
+                displays field 2; delimited by a white space
+            awk -F: '($3 == 0) {print $1}' /etc/passwd
+            
+        sed
+            sed 's/abc/123/'
+                replace first occurenceof abc in everyline with 123
+            sed 's/abc/123/g'
+                replaces every occurence of abc with 123
+            sed '/sus/d'
+                delete the sus lines. Output everything else
+            sed -i '<expression>' file.txt
+                sed INPLACE to make changes permanent
+                
+                
+                DEMO------------------------------------
+                
+                student@lin-ops:~$ alias Hello='echo "Howdy doody"'
+                student@lin-ops:~$ Hello 
+                Howdy doody
+                student@lin-ops:~$ unalias Hello
+
+
+                
+
+
+
+
+
+
+
+    Activities 6-10
+    
+    
+    
