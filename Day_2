@@ -47,7 +47,7 @@ Overview
                 display only the duplicate lines ( opposite of -u )
         awk "awk(1) - pattern scanning and process language"
             
-            syntax:awk [options] 'selection _criteria [action]' inout_file > output_file
+            syntax:awk [options] 'selection _criteria [action]' input_file > output_file
             
             awk -F: '{print $1}'
                 displays 1st field delimited by a ":"
