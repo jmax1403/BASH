@@ -1,0 +1,30 @@
+Bash Paramters(Variables)
+    Variables are parameters set with a name on the left of an equal sign and a value on the right side.
+    Variables are user defined.
+Special Parameters(Builtin Variables)
+    $ SPECIAL PARAMETERS
+        $#  -  represents # of args passd to shell script
+        $0  -  represents the script name
+        $i  -  gives the ith argument passed to the shell script
+        $*  -  gives all args passed to the shell script seperated by a space
+        $!  -  gives the PID of the last background running process
+        $?  -  
+        $_  -  gives last argument provided to the last command that executed
+        $$  -  gives the PID of the current shell
+        $@  -  
+        $-  -  represents current flags set in your shell
+Functions
+Variable Substitution
+    Ultimately Just replacing a variable with its value
+    "Calling on a variable"
+
+
+
+Parameters Vs. Variables
+    Parameter is an entity that stores values
+    Further, a parameter can be
+        name
+        number
+        special character
+    
+    
